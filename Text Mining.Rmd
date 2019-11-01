@@ -11,6 +11,9 @@ output:
 ---
 
 ## What is Text Mining?
+
+delete this line
+
 Text mining is the process of identifying and extracting relevant patterns of information from otherwise unstructured text to aid decision making.
 Using computational algorithms to do this can help to speed up annotations of publications and reduce the chance of human errors.
 
