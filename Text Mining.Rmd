@@ -1,0 +1,55 @@
+---
+title: "Text Mining"
+author: "Zsanett Bahor"
+date: 'Last updated: 16/08/2019'
+output:
+  html_document:
+    self_contained: no
+  pdf_document: default
+---
+
+---
+
+## What is Text Mining?
+Text mining is the process of identifying and extracting relevant patterns of information from otherwise unstructured text to aid decision making.
+Using computational algorithms to do this can help to speed up annotations of publications and reduce the chance of human errors.
+
+Our aim when performing text mining is to identify words or phrases commonly associated with a term or phrase of interest within a text of interest.
+For example, you might want to look for a specific list of drugs within a large collection of publications and filter those publications out, which contain this.
+We use regular expressions for this. Regular expressions are a sequence of characters that define a search pattern.
+
+##Using Regular Expressions
+
+It's best first to decide what it is you want to identify specifically. Think about synonyms, capitals, alternative spellings and anything else that might affect how your word or phrase may be picked up in the literature you are looking at.
+
+For example, if I am looking for the drug `dizocilpine` in the literature, I will find that `MK-801` is also used to describe this drug, which may also be described in a publication as `MK801` or `mk801` and so on...
+
+Once you have this list, you can start to think about what rules you might define to pick up as many occurrences of those expressions you are looking for and avoid as many false positives of them as possible. 
+You can learn more about regex rules [here](https://www.regular-expressions.info/) and how to test out your pattern on your list of words [here](www.regex101.com).
+
+##Applying your regular expressions
+
+Once you have developed your regular expressions it is easy to apply them, but you will need the following:
+-Have the data you want to search in a searchable format
+-Tell the computer how and where to search using your rules
+-Tell the computer what you want to know
+
+###Have the data you want to search in a searchable format
+
+Are you looking at searching PDF's of multipe full-text publications at once or is your data in a spreadsheet where for example you are wanting to look for your expressions within the title and abstract of multiple publications?
+
+####Searching multiple full-text publications
+
+We use the `AutoAnnotation` package by shihikoo on [github](https://github.com/shihikoo/AutoAnnotation/), which you can download into your environment as follows:
+
+`install.packages("devtools")` 
+
+`library(devtools)`
+
+`install_github("shihikoo/AutoAnnotation")`
+
+
+Once you have this, you will need to make sure you have a software installed that converts your PDF's to text.
+We will work with `pdftotext` in this example, which can be downloaded from [here](https://ctan.org/pkg/xpdf?lang=en).
+
+
